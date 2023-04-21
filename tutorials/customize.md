@@ -1,1 +1,1 @@
-# Customize
+# Customize your MC cluster
