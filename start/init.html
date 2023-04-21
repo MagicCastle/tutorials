@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Install &#8212; Magic Castle Tutorials</title>
+    <title>Initialize &#8212; Magic Castle Tutorials</title>
   
   
   
@@ -61,11 +61,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'start/install';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'start/init';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Customize your MC cluster" href="../tutorials/customize.html" />
-    <link rel="prev" title="Configure cloud credentials" href="configure.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,13 +155,13 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="your-first-cluster.html">Your first Magic Castle cluster</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="your-first-cluster.html">Your first Magic Castle cluster</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="terraform.html">Terraform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configure.html">Configure cloud credentials</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Install</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/dns.html">Using a domain name</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/customize.html">Customize your MC cluster</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/terraform_cloud.html">Using Terraform Cloud</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/autoscaling.html">Activating autoscaling</a></li>
@@ -238,7 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/magiccastle/book/issues/new?title=Issue%20on%20page%20%2Fstart/install.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/magiccastle/book/issues/new?title=Issue%20on%20page%20%2Fstart/init.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -268,7 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/start/install.md" target="_blank"
+      <li><a href="../_sources/start/init.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -348,7 +346,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Install</h1>
+    <h1>Initialize</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -362,8 +360,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="install">
-<h1>Install<a class="headerlink" href="#install" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="initialize">
+<h1>Initialize<a class="headerlink" href="#initialize" title="Permalink to this heading">#</a></h1>
+<p>Terraform fetches the plugins required to interact with the cloud provider defined by
+our <code class="docutils literal notranslate"><span class="pre">main.tf</span></code> once when we initialize. To initialize, enter the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terraform</span> <span class="n">init</span>
+</pre></div>
+</div>
+<p>The initialization is specific to the folder where you are currently located.
+The initialization process looks at all <code class="docutils literal notranslate"><span class="pre">.tf</span></code> files and fetches the plugins required
+to build the resources defined in these files. If you replace some or all
+<code class="docutils literal notranslate"><span class="pre">.tf</span></code> files inside a folder that has already been initialized, just call the command
+again to make sure you have all plugins.</p>
+<p>The initialization process creates a <code class="docutils literal notranslate"><span class="pre">.terraform</span></code> folder at the root of your current
+folder. You do not need to look at its content for now.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -397,24 +407,6 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="configure.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Configure cloud credentials</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../tutorials/customize.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Customize your MC cluster</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
