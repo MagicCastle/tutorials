@@ -12,7 +12,8 @@ parts:
     - file: start/cloud
     - file: start/download
     - file: start/init
-    - file: start/configure
+    - file: start/configure_1
+    - file: start/configure_2
   - file: tutorials/dns
   - file: tutorials/customize
   - file: tutorials/terraform_cloud
