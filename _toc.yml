@@ -8,7 +8,9 @@ parts:
   chapters:
   - file: start/your-first-cluster
     sections:
-    - file: start/overview
-    - file: start/install
+    - file: start/terraform
     - file: start/configure
+    - file: start/install
   - file: tutorials/customize
+  - file: tutorials/terraform_cloud
+  - file: tutorials/autoscaling
