@@ -12,7 +12,7 @@ parts:
     - file: start/cloud
     - file: start/download
     - file: start/init
-    - file: start/
+    - file: start/configure
   - file: tutorials/dns
   - file: tutorials/customize
   - file: tutorials/terraform_cloud
