@@ -11,6 +11,8 @@ parts:
     - file: start/terraform
     - file: start/configure
     - file: start/install
+    - file: start/initialize
+  - file: tutorials/dns
   - file: tutorials/customize
   - file: tutorials/terraform_cloud
   - file: tutorials/autoscaling
