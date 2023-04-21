@@ -9,9 +9,10 @@ parts:
   - file: start/your-first-cluster
     sections:
     - file: start/terraform
-    - file: start/configure
+    - file: start/cloud
     - file: start/download
     - file: start/init
+    - file: start/
   - file: tutorials/dns
   - file: tutorials/customize
   - file: tutorials/terraform_cloud
