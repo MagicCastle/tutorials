@@ -364,12 +364,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source">source</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#config-git-url">config_git_url</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#config-version">config_version</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-name">cluster_name</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image">image</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#config-git-url"><code class="docutils literal notranslate"><span class="pre">config_git_url</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#config-version"><code class="docutils literal notranslate"><span class="pre">config_version</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-name"><code class="docutils literal notranslate"><span class="pre">cluster_name</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image"><code class="docutils literal notranslate"><span class="pre">image</span></code></a></li>
 </ul>
             </nav>
         </div>
@@ -391,7 +390,7 @@ the deployed infrastructure and its configuration. The order of the variables
 does not matter, but the following sections are ordered as the variables
 appear in the examples.</p>
 <section id="source">
-<h2>source<a class="headerlink" href="#source" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">source</span></code><a class="headerlink" href="#source" title="Permalink to this heading">#</a></h2>
 <p>The first line of the module block indicates to Terraform where it can find
 the files that define the resources that will compose your cluster.
 In the releases, this variable is a relative path to the cloud
@@ -399,7 +398,7 @@ provider folder (i.e.: <code class="docutils literal notranslate"><span class="p
 <p>Leave this variable to its current value for this tutorial.</p>
 </section>
 <section id="config-git-url">
-<h2>config_git_url<a class="headerlink" href="#config-git-url" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">config_git_url</span></code><a class="headerlink" href="#config-git-url" title="Permalink to this heading">#</a></h2>
 <p>Magic Castle configuration management is handled by
 <a class="reference external" href="https://en.wikipedia.org/wiki/Puppet_(software)">Puppet</a>. The Puppet
 configuration files are stored in a git repository. This is
@@ -407,26 +406,23 @@ typically <a class="reference external" href="https://www.github.com/ComputeCana
 <p>Leave this variable to its current value for this tutorial.</p>
 </section>
 <section id="config-version">
-<h2>config_version<a class="headerlink" href="#config-version" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">config_version</span></code><a class="headerlink" href="#config-version" title="Permalink to this heading">#</a></h2>
 <p>Since Magic Cluster configuration is managed with git, it is possible to specify
 which version of the configuration you wish to use. Typically, it will match the
 version number of the release you have downloaded (i.e: <code class="docutils literal notranslate"><span class="pre">9.3</span></code>).</p>
 <p>Leave this variable to its current value for this tutorial.</p>
 </section>
 <section id="cluster-name">
-<h2>cluster_name<a class="headerlink" href="#cluster-name" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">cluster_name</span></code><a class="headerlink" href="#cluster-name" title="Permalink to this heading">#</a></h2>
 <p>This variable defines the name of your cluster. Choose an original name for your cluster. Limit yourself to alphanumeric characters and dashes.</p>
 </section>
 <section id="image">
-<h2>image<a class="headerlink" href="#image" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">image</span></code><a class="headerlink" href="#image" title="Permalink to this heading">#</a></h2>
 <p>This variable defines the name of the image that will be used as the
 base image for the cluster nodes. The operating system on the image
 must be from the RedHat family. This includes CentOS (7, 8),
 Rocky Linux (8), and AlmaLinux (8).</p>
 <p>Leave this variable to its current value for this tutorial.</p>
-</section>
-<section id="id1">
-<h2><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -497,12 +493,11 @@ Rocky Linux (8), and AlmaLinux (8).</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source">source</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#config-git-url">config_git_url</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#config-version">config_version</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-name">cluster_name</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image">image</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#config-git-url"><code class="docutils literal notranslate"><span class="pre">config_git_url</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#config-version"><code class="docutils literal notranslate"><span class="pre">config_version</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-name"><code class="docutils literal notranslate"><span class="pre">cluster_name</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image"><code class="docutils literal notranslate"><span class="pre">image</span></code></a></li>
 </ul>
   </nav></div>
 
