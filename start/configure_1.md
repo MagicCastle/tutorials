@@ -9,7 +9,7 @@ the deployed infrastructure and its configuration. The order of the variables
 does not matter, but the following sections are ordered as the variables 
 appear in the examples.
 
-## source
+## `source`
 
 The first line of the module block indicates to Terraform where it can find
 the files that define the resources that will compose your cluster.
@@ -18,7 +18,7 @@ provider folder (i.e.: `./aws`).
 
 Leave this variable to its current value for this tutorial.
 
-## config_git_url
+## `config_git_url`
 
 Magic Castle configuration management is handled by
 [Puppet](https://en.wikipedia.org/wiki/Puppet_(software)). The Puppet
@@ -27,7 +27,7 @@ typically [ComputeCanada/puppet-magic_castle](https://www.github.com/ComputeCana
 
 Leave this variable to its current value for this tutorial.
 
-## config_version
+## `config_version`
 
 Since Magic Cluster configuration is managed with git, it is possible to specify
 which version of the configuration you wish to use. Typically, it will match the
@@ -35,11 +35,11 @@ version number of the release you have downloaded (i.e: `9.3`).
 
 Leave this variable to its current value for this tutorial.
 
-## cluster_name
+## `cluster_name`
 
 This variable defines the name of your cluster. Choose an original name for your cluster. Limit yourself to alphanumeric characters and dashes.
 
-## image
+## `image`
 
 This variable defines the name of the image that will be used as the 
 base image for the cluster nodes. The operating system on the image 
@@ -47,5 +47,3 @@ must be from the RedHat family. This includes CentOS (7, 8),
 Rocky Linux (8), and AlmaLinux (8).
 
 Leave this variable to its current value for this tutorial.
-
-## 
