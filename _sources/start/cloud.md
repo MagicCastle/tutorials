@@ -1,4 +1,4 @@
-# Configure cloud credentials
+# Cloud credentials
 
 For Terraform to be able to communicate with the cloud provider API, it needs access to your
 credentials.
