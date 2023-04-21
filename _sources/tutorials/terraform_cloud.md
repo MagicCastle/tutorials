@@ -1,2 +1,2 @@
-# Using Magic Castle with Terraform Cloud
+# Using Terraform Cloud
 
