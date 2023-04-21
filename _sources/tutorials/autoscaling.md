@@ -1,1 +1,1 @@
-# Activating autoscaling with Terraform Cloud
+# Activating autoscaling
