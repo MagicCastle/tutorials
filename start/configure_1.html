@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Configure your cluster &#8212; Magic Castle Tutorials</title>
+    <title>Configure your cluster - part 1 &#8212; Magic Castle Tutorials</title>
   
   
   
@@ -61,10 +61,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'start/configure';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'start/configure_1';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Using a domain name" href="../tutorials/dns.html" />
+    <link rel="next" title="Configure your cluster - part 2" href="configure_2.html" />
     <link rel="prev" title="Initialize" href="init.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -163,7 +163,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="cloud.html">Cloud credentials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="download.html">Download Magic Castle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="init.html">Initialize</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Configure your cluster</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Configure your cluster - part 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configure_2.html">Configure your cluster - part 2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/dns.html">Using a domain name</a></li>
@@ -241,7 +242,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/magiccastle/book/issues/new?title=Issue%20on%20page%20%2Fstart/configure.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/magiccastle/book/issues/new?title=Issue%20on%20page%20%2Fstart/configure_1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +272,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/start/configure.md" target="_blank"
+      <li><a href="../_sources/start/configure_1.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -353,7 +354,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Configure your cluster</h1>
+    <h1>Configure your cluster - part 1</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -367,6 +368,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#config-git-url">config_git_url</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#config-version">config_version</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-name">cluster_name</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image">image</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
 </ul>
             </nav>
         </div>
@@ -378,8 +381,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="configure-your-cluster">
-<h1>Configure your cluster<a class="headerlink" href="#configure-your-cluster" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="configure-your-cluster-part-1">
+<h1>Configure your cluster - part 1<a class="headerlink" href="#configure-your-cluster-part-1" title="Permalink to this heading">#</a></h1>
 <p>In the <code class="docutils literal notranslate"><span class="pre">main.tf</span></code> file, there is a module named after your cloud provider,
 i.e.: <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">&quot;openstack&quot;</span></code>. This module corresponds to the high-level infrastructure
 of your cluster.</p>
@@ -393,6 +396,7 @@ appear in the examples.</p>
 the files that define the resources that will compose your cluster.
 In the releases, this variable is a relative path to the cloud
 provider folder (i.e.: <code class="docutils literal notranslate"><span class="pre">./aws</span></code>).</p>
+<p>Leave this variable to its current value for this tutorial.</p>
 </section>
 <section id="config-git-url">
 <h2>config_git_url<a class="headerlink" href="#config-git-url" title="Permalink to this heading">#</a></h2>
@@ -400,19 +404,29 @@ provider folder (i.e.: <code class="docutils literal notranslate"><span class="p
 <a class="reference external" href="https://en.wikipedia.org/wiki/Puppet_(software)">Puppet</a>. The Puppet
 configuration files are stored in a git repository. This is
 typically <a class="reference external" href="https://www.github.com/ComputeCanada/puppet-magic_castle">ComputeCanada/puppet-magic_castle</a> repository on GitHub.</p>
-<p>We will leave this variable to its current value for this tutorial.</p>
+<p>Leave this variable to its current value for this tutorial.</p>
 </section>
 <section id="config-version">
 <h2>config_version<a class="headerlink" href="#config-version" title="Permalink to this heading">#</a></h2>
 <p>Since Magic Cluster configuration is managed with git, it is possible to specify
 which version of the configuration you wish to use. Typically, it will match the
 version number of the release you have downloaded (i.e: <code class="docutils literal notranslate"><span class="pre">9.3</span></code>).</p>
-<p>We will leave this variable to its current value for this tutorial.</p>
+<p>Leave this variable to its current value for this tutorial.</p>
 </section>
 <section id="cluster-name">
 <h2>cluster_name<a class="headerlink" href="#cluster-name" title="Permalink to this heading">#</a></h2>
-<p>This variable defines the name of your cluster. It must be lowercase alphanumeric characters and start with a letter and can include dashes. <code class="docutils literal notranslate"><span class="pre">cluster_name</span></code> must be 63 characters or less.</p>
-<p>Change this variable to match the name of your folder.</p>
+<p>This variable defines the name of your cluster. Choose an original name for your cluster. Limit yourself to alphanumeric characters and dashes.</p>
+</section>
+<section id="image">
+<h2>image<a class="headerlink" href="#image" title="Permalink to this heading">#</a></h2>
+<p>This variable defines the name of the image that will be used as the
+base image for the cluster nodes. The operating system on the image
+must be from the RedHat family. This includes CentOS (7, 8),
+Rocky Linux (8), and AlmaLinux (8).</p>
+<p>Leave this variable to its current value for this tutorial.</p>
+</section>
+<section id="id1">
+<h2><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -457,11 +471,11 @@ version number of the release you have downloaded (i.e: <code class="docutils li
       </div>
     </a>
     <a class="right-next"
-       href="../tutorials/dns.html"
+       href="configure_2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Using a domain name</p>
+        <p class="prev-next-title">Configure your cluster - part 2</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -487,6 +501,8 @@ version number of the release you have downloaded (i.e: <code class="docutils li
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#config-git-url">config_git_url</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#config-version">config_version</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-name">cluster_name</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image">image</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
 </ul>
   </nav></div>
 

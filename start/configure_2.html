@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Download Magic Castle &#8212; Magic Castle Tutorials</title>
+    <title>Configure your cluster - part 2 &#8212; Magic Castle Tutorials</title>
   
   
   
@@ -61,11 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'start/download';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'start/configure_2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Initialize" href="init.html" />
-    <link rel="prev" title="Cloud credentials" href="cloud.html" />
+    <link rel="next" title="Using a domain name" href="../tutorials/dns.html" />
+    <link rel="prev" title="Configure your cluster - part 1" href="configure_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -161,10 +161,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="your-first-cluster.html">Your first Magic Castle cluster</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="terraform.html">Terraform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cloud.html">Cloud credentials</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Download Magic Castle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download.html">Download Magic Castle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="init.html">Initialize</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configure_1.html">Configure your cluster - part 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configure_2.html">Configure your cluster - part 2</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Configure your cluster - part 2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/dns.html">Using a domain name</a></li>
@@ -242,7 +242,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/magiccastle/book/issues/new?title=Issue%20on%20page%20%2Fstart/download.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/magiccastle/book/issues/new?title=Issue%20on%20page%20%2Fstart/configure_2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -272,7 +272,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/start/download.md" target="_blank"
+      <li><a href="../_sources/start/configure_2.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -341,7 +341,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -352,11 +354,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Download Magic Castle</h1>
+    <h1>Configure your cluster - part 2</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instances">instances</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -366,23 +376,45 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="download-magic-castle">
-<h1>Download Magic Castle<a class="headerlink" href="#download-magic-castle" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="configure-your-cluster-part-2">
+<h1>Configure your cluster - part 2<a class="headerlink" href="#configure-your-cluster-part-2" title="Permalink to this heading">#</a></h1>
+<section id="instances">
+<h2>instances<a class="headerlink" href="#instances" title="Permalink to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">instances</span></code> variable is a map that defines the virtual machines that will compose
+the cluster, where the keys define the hostnames and the values are the attributes
+of the virtual machines.</p>
+<p>Each instance is identified by a unique hostname. An instance’s hostname is composed as
+the key followed by the (1-based) its index. The following map:</p>
+<div class="highlight-hcl notranslate"><div class="highlight"><pre><span></span><span class="nb">instances</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nb">mgmt</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;p2-4gb&quot;</span><span class="p">,</span><span class="w"> </span><span class="na">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nb">login</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;p2-4gb&quot;</span><span class="p">,</span><span class="w">     </span><span class="na">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="na">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nb">node</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;c2-15gb-31&quot;</span><span class="p">,</span><span class="w"> </span><span class="na">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="na">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nb">gpu-node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;gpu2.large&quot;</span><span class="p">,</span><span class="w"> </span><span class="na">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="na">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...]</span><span class="w"> </span><span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>will spawn instances with the following hostnames:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mgmt1</span>
+<span class="n">login1</span>
+<span class="n">node1</span>
+<span class="n">node2</span>
+<span class="n">gpu</span><span class="o">-</span><span class="n">node1</span>
+<span class="n">gpu</span><span class="o">-</span><span class="n">node2</span>
+<span class="n">gpu</span><span class="o">-</span><span class="n">node3</span>
+</pre></div>
+</div>
+<p>Two attributes are expected to be defined for each instance:</p>
 <ol class="arabic simple">
-<li><p>Go to <a class="github reference external" href="https://github.com/ComputeCanada/magic_castle/releases">ComputeCanada/magic_castle</a>.</p></li>
-<li><p>Download the latest zip release of Magic Castle for your cloud provider.</p></li>
-<li><p>Open a Terminal.</p></li>
-<li><p>Uncompress the release: <code class="docutils literal notranslate"><span class="pre">unzip</span> <span class="pre">magic_castle*.zip</span></code></p></li>
-<li><p>Rename the release folder after your favourite superhero: <code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">magic_castle*</span> <span class="pre">hulk</span></code></p></li>
-<li><p>Move inside the folder: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">hulk</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: cloud provider name for the combination of CPU, RAM and other features of the virtual machine;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tags</span></code>: list of labels that defines the role of the instance.</p></li>
 </ol>
-<p>The file <code class="docutils literal notranslate"><span class="pre">main.tf</span></code> contains Terraform modules and outputs. Modules are files that define a set of
-resources that will be configured based on the inputs provided in the module block.
-Outputs are used to tell Terraform which variables of
-our module we would like to be shown on the screen once the resources have been instantiated.</p>
-<p>This file will be our main canvas to design our new clusters. As long as the module block
-parameters suffice to our need, we will be able to limit our configuration to this sole
-file. Further customization will be addressed during the second part of the tutorial.</p>
+<div class="admonition-notes-on-tags admonition">
+<p class="admonition-title">Notes on tags</p>
+<p>Tags are used in the Terraform
+code to identify if devices (volume, network) need to be attached to an instance, while in Puppet code tags are used to identify roles of the instances.</p>
+</div>
+<p>Leave this variable to its current value for this tutorial.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -417,20 +449,20 @@ file. Further customization will be addressed during the second part of the tuto
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cloud.html"
+       href="configure_1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Cloud credentials</p>
+        <p class="prev-next-title">Configure your cluster - part 1</p>
       </div>
     </a>
     <a class="right-next"
-       href="init.html"
+       href="../tutorials/dns.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Initialize</p>
+        <p class="prev-next-title">Using a domain name</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -443,6 +475,20 @@ file. Further customization will be addressed during the second part of the tuto
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instances">instances</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
